@@ -1,4 +1,4 @@
-title:              Digital Multimedia Design
+title:              ELMS:LN Project Home
 
 # Versioning
 current_version: 1.5.0
@@ -23,8 +23,8 @@ permalink:          pretty
 # destination:        ./static
 
 port:               9002
-url: http://www.open-curriculum.org # the base hostname & protocol for your site
-baseurl: "/program-hub"
+url: http://www.elmsln.org # the base hostname & protocol for your site
+baseurl: ""
 
 # exclude this stuff when building the static site
 exclude:            [
@@ -40,8 +40,8 @@ exclude:            [
 #ga_id:             ##-########-###
 site_name:          DMD
 site_description :  
-site_copyright:     Copyright (c) 2016
-site_url:           http://www.open-curriculum.org/program-hub
+site_copyright:     Copyright (c) 2017
+site_url:           http://www.elmsln.org
 site_email:         
 site_phone:         
 
@@ -68,9 +68,9 @@ collections:
 
 #Navigation
 menuitems:
-  - url: /program-hub/
+  - url: 
     title: Home
-  - url: /program-hub/program/
+  - url: /program/
     title: Program
-  - url: /program-hub/about/
+  - url: /about/
     title: About

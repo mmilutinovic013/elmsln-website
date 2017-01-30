@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Digital Multimedia Design</title>
+    <title>ELMS:LN Project Home</title>
     <description></description>    
-    <link>http://www.open-curriculum.org</link>
-    <atom:link href="http://www.open-curriculum.org/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://www.elmsln.org</link>
+    <atom:link href="http://www.elmsln.org/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Post 2</title>
@@ -15,8 +15,8 @@
 </description>
         
                           <pubDate>Sun, 14 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://www.open-curriculum.org/2014/12/14/post-two/</link>
-        <guid isPermaLink="true">http://www.open-curriculum.org/2014/12/14/post-two/</guid>
+        <link>http://www.elmsln.org/2014/12/14/post-two/</link>
+        <guid isPermaLink="true">http://www.elmsln.org/2014/12/14/post-two/</guid>
       </item>
     
       <item>
@@ -28,8 +28,8 @@
 </description>
         
                           <pubDate>Sun, 14 Dec 2014 00:00:00 -0500</pubDate>
-        <link>http://www.open-curriculum.org/2014/12/14/post-one/</link>
-        <guid isPermaLink="true">http://www.open-curriculum.org/2014/12/14/post-one/</guid>
+        <link>http://www.elmsln.org/2014/12/14/post-one/</link>
+        <guid isPermaLink="true">http://www.elmsln.org/2014/12/14/post-one/</guid>
       </item>
     
   </channel>
