@@ -10,7 +10,7 @@ title: The Program
             <div class="top-bar-title">
                 <!-- <a class="shield" href="http://psu.edu"><img alt="The Penn State University Sheild" src="../assets/img/psu_arch_shield_blue.svg"/></a>
           <a class="masthead" href="/"><img alt="The College of Arts and Architecture Masthead" src="../assets/img/psu_arch_masthead_blue.svg"/></a> -->
-                <a class="masthead" href="/"><img alt="The Pennsylvania State University" src="../assets/img/psu_shield.svg" /></a>
+                <a class="masthead" href="/"><img alt="The Pennsylvania State University" src="../assets/img/elmsln-logo.png" /></a>
                 <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="menu-button">
       <button class="menu-icon" type="button" data-toggle></button>
     </span>
@@ -23,8 +23,9 @@ title: The Program
                         {% for menuitem in site.menuitems %} {% if menuitem.url == page.dir %} {% assign class = "active" %} {% else %} {% assign class = "normal" %} {% endif %}
                         <li class="{{ class }}"><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
                         {% endfor %}
-                        <li class="apply-topbar-button"><a href="
-http://www.worldcampus.psu.edu/degrees-and-certificates/penn-state-online-digital-multimedia-design-bachelors-degree/overview" target="_blank">Apply</a></li>
+                        <li class="apply-topbar-button">
+                            <a href="https://github.com/elmsln/elmsln">Join Us</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- </div> -->

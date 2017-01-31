@@ -94,5 +94,17 @@ $(document).foundation();
             }); 
         });
     });
-    
+    $doc.ready(function(){
+        var $container = $('.courseContainer');
+        $container.isotope({
+            filter: '*',
+            layoutMode: 'fitRows',
+            itemSelector: '.course-item',
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+    });
 })(jQuery);

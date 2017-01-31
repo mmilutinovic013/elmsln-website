@@ -43,7 +43,7 @@ $main-accent-color:#ff5722;
       }
     }
     a.masthead{
-      @media #{$small-only}{
+      @media #{$large-only}{
         display: block;
         float: left;
       }

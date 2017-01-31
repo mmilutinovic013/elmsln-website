@@ -2,7 +2,7 @@
 name: Michael Collins
 titles: [Faculty]
 email: msc227@psu.edu
-image-url: ../assets/img/collins-mug.jpg
+image-url: ../assets/img/mcollins.png
 lead-faculty: 0
 role: School of Visual Arts
 published: yes
