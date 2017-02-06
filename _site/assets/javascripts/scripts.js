@@ -76,7 +76,6 @@ $(document).foundation();
                     }
                 });
 
-
                 $('#courseFilter a').click(function(){
                 $('#courseFilter .current').removeClass('current');
                 $(this).addClass('current');
@@ -106,5 +105,34 @@ $(document).foundation();
                 queue: false
             }
         });
+        $('.accordion-group-tab > a').click(function(){
+            var selector = $(this).attr('data-filter');
+            $container.isotope('destroy');
+            $container.isotope({
+                filter: 'selector',
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+             });
+        }); 
+        $('#courseFilter a').click(function(){
+            //$container.isotope('destroy');
+            $('#courseFilter .current').removeClass('current');
+            $(this).addClass('current');
+     
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: '*',
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+             });
+             return false;
+        }); 
     });
+
 })(jQuery);

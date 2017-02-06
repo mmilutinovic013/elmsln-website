@@ -7,8 +7,9 @@
     	{% for pathway in site.pathways %}
 
     	<li class="accordion-group-tab">
-    	
-	        <a href="#{{ pathway.title | slugify }}">{{ pathway.title }} </a> 
+    		<!-- Sweet magic https://github.com/imathis/octopress/issues/1669 --> 
+    		{% capture tab-index %}{{ pathway.tab-index }}{% endcapture %}
+	        <a href="#{{ tab-index | slugify }}">{{ pathway.title }} </a> 
 	          <ul class="menu vertical nested">
 	          <li id="courseFilter">
                    

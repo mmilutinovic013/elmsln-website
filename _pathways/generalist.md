@@ -1,4 +1,4 @@
 ---
 title: Generalist
-is-active: false
+tab-index: 1
 ---

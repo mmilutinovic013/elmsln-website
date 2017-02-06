@@ -1,4 +1,4 @@
 ---
 title: Digital Design
-is-active: false
+tab-index: 0
 ---
