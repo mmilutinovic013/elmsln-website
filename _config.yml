@@ -70,7 +70,11 @@ collections:
 menuitems:
   - url: /
     title: Home
-  - url: /program/
-    title: Program
   - url: /about/
     title: About
+  - url: /examples/
+    title: Examples
+  - url: /documentation/
+    title: Documentation
+  - url: /blog/
+    title: Blog
