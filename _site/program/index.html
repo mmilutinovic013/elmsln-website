@@ -40,6 +40,7 @@
 
  <body>
   <!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode -->
+<link rel="import" href="/bower_components/nebula-button-behavior/nebula-button-behavior.html"> 
 <div class="program-header">
     <!-- TOP BAR -->
     <div class="row">
@@ -193,25 +194,53 @@
         <div class="tabs-panel" id="pathways-panel">
             <h2 class="callout-heading">Pathways</h2>
             <!-- ACCORDION -->
-
+<link rel="import" href="../bower_components/nebula-button-behavior/nebula-button-behavior.html"> 
 <div class="accordion-group" id="pathway-accordion">
     <ul class="vertical menu" data-accordion-menu data-multi-open="false">
     	<!--this stupid part is being stupid... -->
-	    
+	    <dom-module id="my-button">
+	    <template>
+	    	 <style>
+    		.iron-selected {
+     			background: #eee;
+    		}
+		</style>
+
+		...
+
+		<iron-selector selected="0">
+		<div>Item 1</div>
+		<div>Item 2</div>
+		<div>Item 3</div>
+		</iron-selector>
+	   		<button></button>
+
+	    </template>
+	    <script>
+	    Polymer({
+  			is: 'my-button',
+ 		  	behaviors: [
+    			Nebula.ButtonBehavior
+  				]
+			})
+	    </script>
+		</dom-module>
+		<my-button on-tap="onTap" on-change="onChange" tabindex="0">Button</my-button>
+		<my-button on-tap="onTap" on-change="onChange" tabindex="0" toggle>Toggle</my-button>
+		<my-button on-tap="onTap" on-change="onChange" tabindex="0" disabled>Disabled</my-button>
     	
 
     	<li class="accordion-group-tab">
     		<!-- Sweet magic https://github.com/imathis/octopress/issues/1669 --> 
+
     		
 	        <a href="#0">Digital Design </a> 
 	          <ul class="menu vertical nested">
 	          <li id="courseFilter">
-                   
                        <a href="#" data-filter="*" class="current">All Courses</a>
                        <a href="#" data-filter=".art" >ART</a>
                        <a href="#" data-filter=".comm" >COMM</a>
-                       <a href="#" data-filter=".ist" >IST</a>
-                   
+						<my-button on-tap="onTap" on-change="onChange" tabindex="0" toggle>Toggle</my-button>
 			</li>
 			<div class="courseContainer">
 	  			
@@ -531,16 +560,15 @@
 
     	<li class="accordion-group-tab">
     		<!-- Sweet magic https://github.com/imathis/octopress/issues/1669 --> 
+
     		
 	        <a href="#1">Generalist </a> 
 	          <ul class="menu vertical nested">
 	          <li id="courseFilter">
-                   
                        <a href="#" data-filter="*" class="current">All Courses</a>
                        <a href="#" data-filter=".art" >ART</a>
                        <a href="#" data-filter=".comm" >COMM</a>
-                       <a href="#" data-filter=".ist" >IST</a>
-                   
+						<my-button on-tap="onTap" on-change="onChange" tabindex="0" toggle>Toggle</my-button>
 			</li>
 			<div class="courseContainer">
 	  			
@@ -866,16 +894,15 @@
 
     	<li class="accordion-group-tab">
     		<!-- Sweet magic https://github.com/imathis/octopress/issues/1669 --> 
+
     		
 	        <a href="#2">Interactive Media Developer </a> 
 	          <ul class="menu vertical nested">
 	          <li id="courseFilter">
-                   
                        <a href="#" data-filter="*" class="current">All Courses</a>
                        <a href="#" data-filter=".art" >ART</a>
                        <a href="#" data-filter=".comm" >COMM</a>
-                       <a href="#" data-filter=".ist" >IST</a>
-                   
+						<my-button on-tap="onTap" on-change="onChange" tabindex="0" toggle>Toggle</my-button>
 			</li>
 			<div class="courseContainer">
 	  			
@@ -1203,16 +1230,15 @@
 
     	<li class="accordion-group-tab">
     		<!-- Sweet magic https://github.com/imathis/octopress/issues/1669 --> 
+
     		
 	        <a href="#3">Media for Civic Engagement </a> 
 	          <ul class="menu vertical nested">
 	          <li id="courseFilter">
-                   
                        <a href="#" data-filter="*" class="current">All Courses</a>
                        <a href="#" data-filter=".art" >ART</a>
                        <a href="#" data-filter=".comm" >COMM</a>
-                       <a href="#" data-filter=".ist" >IST</a>
-                   
+						<my-button on-tap="onTap" on-change="onChange" tabindex="0" toggle>Toggle</my-button>
 			</li>
 			<div class="courseContainer">
 	  			
@@ -1490,16 +1516,15 @@
 
     	<li class="accordion-group-tab">
     		<!-- Sweet magic https://github.com/imathis/octopress/issues/1669 --> 
+
     		
 	        <a href="#4">Video Production </a> 
 	          <ul class="menu vertical nested">
 	          <li id="courseFilter">
-                   
                        <a href="#" data-filter="*" class="current">All Courses</a>
                        <a href="#" data-filter=".art" >ART</a>
                        <a href="#" data-filter=".comm" >COMM</a>
-                       <a href="#" data-filter=".ist" >IST</a>
-                   
+						<my-button on-tap="onTap" on-change="onChange" tabindex="0" toggle>Toggle</my-button>
 			</li>
 			<div class="courseContainer">
 	  			

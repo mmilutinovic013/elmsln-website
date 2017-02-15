@@ -1,0 +1,183 @@
+<!--
+@license
+Copyright (c) 2017 Ars Nebula LLC.
+This code may be used under the terms found in LICENSE.md of this repository.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+<script>
+  window.Nebula = window.Nebula || {}
+
+  var KEY_ENTER = 13
+  var KEY_SPACE = 32
+
+  /**
+  * `Nebula.ButtonBehavior` is a Polymer behavior to support button capabilities.
+  *
+  * The behavior extends a custom element to add a `pushed` property that tracks when the button is in a pushed down state. `toggle` and `pressed` properties are used when the button is in toggle mode, and if the button is currently pressed. Keyboard and Gesture events are handled automatically to update the state properties accordingly.
+  *
+  * In toggle mode, if the button is pressed, the `aria-pressed` attribute is added to support **a11y**.  *
+  *
+  * ```js
+  * Polymer({
+  *   is: 'my-button',
+  *   behaviors: [
+  *     Nebula.ButtonBehavior
+  *   ]
+  * })
+  * ```
+  *
+  * Style a button element based on `pressed` and `pushed`.
+  *
+  * ```css
+  * :host([pressed]),
+  * :host([pushed]) {
+  *   background-color: teal;
+  *   color: white;
+  * }
+  * ```
+  *
+  * @polymerBehavior
+  * @demo demo/index.html
+  */
+  Nebula.ButtonBehavior = {
+    properties: {
+      /**
+      * Indicates whether the button is a toggle button.
+      */
+      toggle: {
+        type: Boolean,
+        reflectToAttribute: true,
+        value: false
+      },
+      /**
+      * Indicates whether a toggle button is in a pressed state.
+      */
+      pressed: {
+        type: Boolean,
+        reflectToAttribute: true,
+        notify: true,
+        value: false
+      },
+      /**
+      * Indicates whether the button is pushed down.
+      */
+      pushed: {
+        type: Boolean,
+        reflectToAttribute: true,
+        readOnly: true,
+        value: false
+      }
+    },
+    listeners: {
+      'down': '__buttonOnGestureDown',
+      'up': '__buttonOnGestureUp',
+      'keydown': '__buttonOnKeyDown',
+      'keyup': '__buttonOnKeyUp'
+    },
+    observers: [
+      '__buttonOnTogglePressedChanged(toggle, pressed)',
+      '__buttonOnPressedChanged(pressed)'
+    ],
+    /**
+    * Lifecycle event triggered when element has been initialized.
+    */
+    ready: function() {
+      this.__buttonIsReady = true
+    },
+    /**
+    * Property observer triggered when either the `toggle` or `pressed` properties are changed.
+    * Responsible for updating element attributes to support **WAI-ARIA**.
+    */
+    __buttonOnTogglePressedChanged: function(toggle, pressed) {
+      if (toggle) {
+        this.setAttribute('aria-pressed', pressed.toString())
+      } else {
+        this.removeAttribute('aria-pressed')
+      }
+    },
+    /**
+    * Property observer triggered when the `pressed` property is changed.
+    * Responsible for dispatching a change event.
+    */
+    __buttonOnPressedChanged: function(pressed) {
+      if (this.hasAttribute('disabled')) return
+      if (!this.__buttonIsReady) return
+      
+      if (this.toggle) {
+        var event
+        if (typeof window.Event !== 'function') {
+          event = document.createEvent('Event')
+          event.initEvent('change', true, false)
+        } else {
+          event = new Event('change', {bubbles: true, cancelable: false})
+        }
+        this.dispatchEvent(event)
+      }
+    },
+    /**
+    * Keyboard event handler triggered when a key is pressed.
+    * If a `Space` or `Enter` key is pressed, it pushes the button.
+    */
+    __buttonOnKeyDown: function(e) {
+      var keyCode = e.keyCode || e.which
+      if ((keyCode === KEY_ENTER || keyCode === KEY_SPACE)) {
+        e.preventDefault()
+        if (this.hasAttribute('disabled')) return
+        this._setPushed(true)
+      }
+    },
+    /**
+    * Keyboard event handler triggered when a key is released.
+    * If a `Space` or `Enter` keypress is performed, it triggers a `click` event.
+    */
+    __buttonOnKeyUp: function(e) {
+      var keyCode = e.keyCode || e.which
+      if ((keyCode === KEY_ENTER || keyCode === KEY_SPACE)) {
+        e.preventDefault()
+        if (this.hasAttribute('disabled')) return
+
+        var event
+        if (typeof window.MouseEvent !== 'function') {
+          event = document.createEvent('MouseEvent')
+          event.initMouseEvent('click', true, false, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null)
+        } else {
+          event = new MouseEvent('click', {bubbles: true, cancelable: false})
+        }
+        this.dispatchEvent(event)
+ 
+        if (this.toggle) {
+          this.set('pressed', !this.pressed)
+        }
+        this._setPushed(false)        
+      }
+    },
+    /**
+    * Event handler triggered on a down gesture (mouse or touch).
+    * The `pressed` property is updated depending on the `toggle` property.
+    */
+    __buttonOnGestureDown: function(e) {
+      if (this.hasAttribute('disabled')) return
+      this._setPushed(true)
+    },
+    /**
+    * Event handler triggered on an up gesture (mouse or touch).
+    * The `pressed` property is updated depending on the `toggle` property.
+    */
+    __buttonOnGestureUp: function(e) {
+      if (this.hasAttribute('disabled')) return
+
+      if (this.toggle) {
+        // update pressed async so click event can dispatch
+        // before change event
+        setTimeout(function() {
+          this.set('pressed', !this.pressed)
+          this._setPushed(false)
+        }.bind(this))        
+      } else {
+        this._setPushed(false)
+      }
+    }
+  }
+</script>

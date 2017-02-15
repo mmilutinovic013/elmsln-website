@@ -1,0 +1,39 @@
+<!--
+@license
+Copyright (c) 2017 Ars Nebula LLC.
+This code may be used under the terms found in LICENSE.md of this repository.
+-->
+
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../nebula-button-behavior.html">
+
+<dom-module id="demo-element">
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+        padding: 16px;
+        border: 1px solid teal;
+        color: teal;
+      }
+      :host([pushed]),
+      :host([pressed]) {
+        background-color: teal;
+        color: white;
+      }
+      :host([disabled]) {
+        pointer-events: none;
+        opacity: 0.6;
+      }
+    </style>
+    <slot></slot>
+  </template>
+  <script>
+    Polymer({
+      is: 'demo-element',
+      behaviors: [
+        Nebula.ButtonBehavior
+      ]
+    })
+  </script>
+</dom-module>
