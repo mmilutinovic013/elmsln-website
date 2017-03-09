@@ -24,7 +24,10 @@ section.cta {
   background-image: url('../img/computer.jpg');
   padding: 250px 0;
 }
-.snowflake-container {
+header .snowflake-container {
   max-width: 300px;
   margin: 0 auto;
+}
+header .device-container .screen img {
+  border-radius: 3px;
 }
