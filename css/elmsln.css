@@ -56,7 +56,7 @@ section.features .snowflake-container {
   }
 }
 .logo img {
-  max-width: 120px;
+  width: 120px;
   height: auto;
   margin: 0 auto;
 }
