@@ -28,6 +28,30 @@ header .snowflake-container {
   max-width: 300px;
   margin: 0 auto;
 }
-header .device-container .screen img {
+header .snowflake-container .screen img {
   border-radius: 3px;
+}
+header .snowflake-container {
+  max-width: none;
+  max-height: calc(0vh);
+  margin: 100px auto 0;
+}
+@media (min-width: 992px) {
+  section.features .snowflake-container,
+  section.features .feature-item {
+    max-width: none;
+  }
+}
+section.features .snowflake-container,
+section.features .feature-item {
+  max-width: 300px;
+  margin: 0 auto;
+}
+section.features .snowflake-container {
+  margin-bottom: 100px;
+}
+@media (min-width: 992px) {
+  section.features .snowflake-container {
+    margin-bottom: 0;
+  }
 }
