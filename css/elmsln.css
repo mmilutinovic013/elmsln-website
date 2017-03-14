@@ -60,3 +60,9 @@ img.logo {
   height: auto;
   margin: 0 auto;
 }
+img.snowflake-color,
+img.snowflake-bw {
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+}
