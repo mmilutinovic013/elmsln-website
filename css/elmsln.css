@@ -21,7 +21,7 @@ section.cta {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/computer.jpg');
+  background-image: url('../img/elmsln-background-snowflakes-dark.jpg');
   padding: 250px 0;
 }
 header .snowflake-container {
@@ -83,11 +83,11 @@ header {
   width: 100%;
   min-height: auto;
   overflow-y: hidden;
-  background: url("../img/elmsln-background-green.jpg"), #7b4397;
+  background: url("../img/computer.jpg"), #7b4397;
   /* fallback for old browsers */
-  background: url("../img/elmsln-background-green.jpg"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
+  background: url("../img/computer.jpg"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: url("../img/elmsln-background-green.jpg"), linear-gradient(to left, #7b4397, #dc2430);
+  background: url("../img/computer.jpg"), linear-gradient(to left, #7b4397, #dc2430);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
