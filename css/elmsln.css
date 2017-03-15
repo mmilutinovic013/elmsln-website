@@ -80,7 +80,7 @@ section.contact ul.list-social li.social-slack a:hover {
 }
 header {
   position: relative;
-  width: 100%;
+  width: auto;
   min-height: auto;
   overflow-y: hidden;
   background: url("../img/computer.jpg"), #7b4397;
