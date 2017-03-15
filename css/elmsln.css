@@ -60,6 +60,11 @@ img.logo {
   height: auto;
   margin: 0 auto;
 }
+img.img-circle {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
 img.snowflake-color,
 img.snowflake-bw {
   width: 400px;
