@@ -78,3 +78,13 @@ section.contact ul.list-social li.social-slack a {
 section.contact ul.list-social li.social-slack a:hover {
   background-color: #00cccc;
 }
+section.cta {
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url('../img/elmsln-background-green.jpg');
+  padding: 250px 0;
+}
