@@ -79,5 +79,12 @@ section.contact ul.list-social li.social-slack a:hover {
   background-color: #00cccc;
 }
 header {
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
   background-image: url("../img/computer.jpg"), #7b4397;
+  padding: 250px 0;
 }
