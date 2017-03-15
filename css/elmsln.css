@@ -78,3 +78,16 @@ section.contact ul.list-social li.social-slack a {
 section.contact ul.list-social li.social-slack a:hover {
   background-color: #00cccc;
 }
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  overflow-y: hidden;
+  background: url("../img/elmsln-background-snowflakes-dark.jpg"), #7b4397;
+  /* fallback for old browsers */
+  background: url("../img/elmsln-background-snowflakes-dark.jpg"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: url("../img/elmsln-background-snowflakes-dark.jpg"), linear-gradient(to left, #7b4397, #dc2430);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
